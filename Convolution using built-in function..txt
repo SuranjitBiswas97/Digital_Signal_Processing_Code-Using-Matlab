@@ -1,0 +1,19 @@
+Task 3
+Convolution using built-in function.
+
+%Lab 5
+close all
+clear
+clc
+x=[0 0 1 1 1 0 0];
+h=[0 0 0.5 2 0 0 0];
+n=[-2:4];
+
+y=conv(x,h);
+figure
+subplot 311
+stem(x)
+subplot 312
+stem(h)
+subplot 313
+stem(y);

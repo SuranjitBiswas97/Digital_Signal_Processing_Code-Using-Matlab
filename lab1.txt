@@ -1,0 +1,152 @@
+Task 1
+Installation of MATLAB
+
+Task 2
+Basic matlab instructions
+
+a=4;
+b=5;
+c=a+b;
+%difference between usiong a semicolon at the end of an instruction and not
+disp(c);
+c=a-b;
+c=a*b;
+c=a/b;
+
+%Matrix and vector
+a=[0 1 2]
+a=[0 1 2; 3 4 5]
+a=[0 1 2; 3 4 5;6 7 8]
+b=[1 2 3; 4 5 6; 7 8 9]
+c=a+b
+d=a*b
+e=[a b]
+f=[a;b]
+g=f(1,1)
+g=f(3,1)
+g=f(1,3)
+h=f(1,:)
+h=f(:,1)
+
+clear % clears the workspace
+clc %clears the comman window
+
+a=[1 2 3; 4 5 6; 7 8 9]
+b=[1:12;2:13;3:14]
+b=[b; b; b; b]
+c= b(1:3,1:3)
+c(1,:)=[]
+c(:,1)=[]
+
+clc
+
+zeros(3)
+zeros(5,3)
+a=zeros(5,3)
+b=zeros(3)
+c=ones(4,5)
+d=ones(5)
+e=zeros(size(c))
+
+clc
+r=5
+area=pi*r*r
+pi
+r^2
+area=pi*r^2
+b=cos(pi/2)
+c=sin(pi/2)
+%MATLAB by default operates with a variable by considering it as a matrix.
+%For a single value, it considers the variable as a 1*1 matrix.
+x=[1 2 3; 4 5 6;7 8 9]
+y=sin(x)
+Task 3
+Basic Graphing code
+
+%plotting a sinusoidal curve
+close all
+clear
+clc
+ts=0.01;
+x=0:ts:4*pi
+y=sin(x)
+z=cos(x)
+plot(x,y)
+plot(x,z)
+Task 4
+Basic input output code
+
+%basic code using matlab
+close all
+clear
+clc
+
+
+r=input('Radius= ');
+% sample input: 5 or -5
+%r=5;
+
+% if r>0
+% area=pi*r^2;
+% c=2*pi*r;
+% fprintf('area= %g\t circumference= %g\n', area, c);
+% elseif r<0
+% fprintf('Radius is less than 0\n');
+% end
+
+while (r>0)
+area=pi*r^2;
+c=2*pi*r;
+fprintf('area= %g\t circumference= %g\n', area, c);
+break;
+end
+Task 5
+Introduction to for loop
+
+%Use of for loop
+close all
+clear
+clc
+
+n=input('Number of iteration= ');
+
+for i=1:1:n
+    r=input('Radius= ');
+    if r>0
+        area=pi*r^2;
+        c=2*pi*r;
+        fprintf('Area= %g \t Circumference= %g\n', area, c);
+    elseif r<0
+        fprintf('Radius is negative\n');
+    end
+end
+Task 6
+Another spin on task 5
+
+%Another spin on the previous example
+close all
+clear
+clc
+
+n=input('Number of iteration= ');
+r=[];
+for i=1:n
+x=input('Radius= ');
+r=[r x];
+end
+
+% area=pi*r;
+% area=area.*r;
+
+area=pi*r.^2;
+c=2*pi*r;
+% disp('radius=');
+% disp(r)
+% disp('area=');
+% disp(area)
+% disp('Circumference=');
+% disp(c)
+
+for i=1:n
+fprintf('Radius=%g\tArea= %g\t circumference=%g\n',r(i), area(i), c(i))
+end

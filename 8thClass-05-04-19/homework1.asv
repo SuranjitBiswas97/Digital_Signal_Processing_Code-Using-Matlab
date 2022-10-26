@@ -1,0 +1,14 @@
+L = 10;
+fs = 1000;
+Ts = 1/fs;
+t  = 0:Ts:L-Ts;
+f0 = 10;
+w = 2*pi*f0;
+mu = 1;
+x = cos(2*pi*(f0+t*mu).*t);
+N = length(t);
+F = fs/N;
+f = f0+2*t*mu;
+soundsc(x, fs);
+plot(t,x);
+xlabel('Time, t');

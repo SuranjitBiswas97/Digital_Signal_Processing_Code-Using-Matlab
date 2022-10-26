@@ -1,0 +1,24 @@
+Task 2
+Sin and cosine component of a complex numbers.
+
+%Lab 5
+close all
+clear
+clc
+j=sqrt(-1);
+
+f=1;
+w=2*pi*f;
+fs=100;
+t=0:1/fs:5;
+y=exp(j*w*t);
+figure
+plot(t,real(y));
+title('real Part of complex exponential variable e^j^w^t');
+xlabel('t');
+ylabel('Real(e^j^w^t)');
+figure;
+plot(t,imag(y));
+title('imaginary Part of complex exponential variable e^j^w^t');
+xlabel('t');
+ylabel('Imaginary(e^j^w^t)');

@@ -1,0 +1,104 @@
+Task 1
+Complex numbers in matlab. Complex number mathematics (Addition Subtraction) in Matlab.
+
+%Lab 5
+close all
+clear
+clc
+j=sqrt(-1);
+a=5;
+b=6;
+c=a+j*b;
+d=3+j*9;
+
+x=5*c+6*d;
+
+disp(real(x));
+disp(imag(x));
+disp(abs(x));
+disp(angle(x));
+Task 2
+Sin and cosine component of a complex numbers.
+
+%Lab 5
+close all
+clear
+clc
+j=sqrt(-1);
+
+f=1;
+w=2*pi*f;
+fs=100;
+t=0:1/fs:5;
+y=exp(j*w*t);
+figure
+plot(t,real(y));
+title('real Part of complex exponential variable e^j^w^t');
+xlabel('t');
+ylabel('Real(e^j^w^t)');
+figure;
+plot(t,imag(y));
+title('imaginary Part of complex exponential variable e^j^w^t');
+xlabel('t');
+ylabel('Imaginary(e^j^w^t)');
+Task 3
+Convolution using built-in function.
+
+%Lab 5
+close all
+clear
+clc
+x=[0 0 1 1 1 0 0];
+h=[0 0 0.5 2 0 0 0];
+n=[-2:4];
+
+y=conv(x,h);
+figure
+subplot 311
+stem(x)
+subplot 312
+stem(h)
+subplot 313
+stem(y);
+Task 4
+Convolution without built-in function.
+pro:03:HW
+close all
+clear 
+clc
+
+h=[0 0 1 1 1 0 0];
+x=[0 0 0.5 2 0 0 0];
+a=0;
+m=length(x);
+n=length(h);
+for i=1:n+m:1
+    if(i+a>0)
+        d=((a)*h+(n+m-a)); 
+    else
+    end
+end
+%y=conv(x,h);
+figure
+subplot 311
+stem(h)
+subplot 312
+stem(x)
+subplot 313
+stem(d)
+
+
+To be done by students
+Task 5
+Fourier Series.
+Lathi Example 3.3
+
+To be done by students
+Task 6
+Fourier series of a square pulse
+
+To be done by students
+Homework
+Task 4,5,6
+Submit your homework here
+ 

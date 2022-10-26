@@ -1,0 +1,55 @@
+Task 4
+More details on Plotting
+
+% Unit Step and Ramp function using Unit Impulse function
+close all
+clear
+clc
+
+a=1;   %Defining amplitude
+fs=1;
+
+t=-10:1/fs:10;
+impl=zeros(1,length(t));
+for i=1:length(t)
+    if t(i)==0
+        impl(i)=1;
+    else
+        impl(i)=0;
+    end
+end
+
+figure;
+subplot 131
+stem(t,impl);
+title('Impulse Function');
+xlabel('Time');
+ylabel('Aplitude');
+
+stp=zeros(1,length(t));
+for i=0:max(t)
+    y=circshift(impl,[0 i]);
+    stp=stp+y;
+end
+
+subplot 132
+stem(t,stp)
+title('Step Function');
+xlabel('Time');
+ylabel('Aplitude');
+
+rmp=zeros(1,length(t));
+for i=0:max(t)
+    y=circshift(impl,[0 i]);
+    rmp=rmp+i*y;
+end
+
+subplot 133
+stem(t,rmp)
+title('Ramp Function');
+xlabel('Time');
+ylabel('Aplitude');
+
+figure
+
+plot(t,stp,'--r')

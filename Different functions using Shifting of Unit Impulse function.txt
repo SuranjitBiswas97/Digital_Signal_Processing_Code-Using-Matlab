@@ -1,0 +1,36 @@
+Different functions using Shifting of Unit Impulse function
+
+%Different functions using Shifting of Unit Impulse function
+close all
+clear
+clc
+
+a=1;   %Defining amplitude
+fs=1;
+
+x=[4 -2 3 2 0 2 -1 2 1 2 0];
+
+t=-floor(length(x)/2):1/fs:floor(length(x)/2);
+impl=zeros(1,length(t));
+for i=1:length(t)
+    if t(i)==0
+        impl(i)=1;
+    else
+        impl(i)=0;
+    end
+end
+
+func=zeros(1,length(t));
+
+for i=1:length(t)
+    y=circshift(impl,[0, t(i)]);
+    func=func+x(i)*y;
+end
+    
+
+figure;
+subplot 211
+stem(x)
+subplot 212
+stem(t,func);
+%y=circshift(impl,[0 1]);

@@ -1,0 +1,11 @@
+Task 2
+Basic matlab instructions
+
+a=4;
+b=5;
+c=a+b;
+%difference between usiong a semicolon at the end of an instruction and not
+disp(c);
+c=a-b;
+c=a*b;
+c=a/b;
